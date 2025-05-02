@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E9C9026-2B9A-479D-8AB1-AEFEF90D4C7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EagleSpy</RootNamespace>
+    <AssemblyName>EagleSpy</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>EagleSpy.ico</ApplicationIcon>
+    <StartupObject>Eagle_Spy.My.MyApplication</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DrakeUI.Framework">
+      <HintPath>..\..\EagleSpy V4\DrakeUI.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoIPCitys">
+      <HintPath>..\..\EagleSpy V4\GeoIPCitys.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\EagleSpy V4\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts">
+      <HintPath>..\..\EagleSpy V4\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms">
+      <HintPath>..\..\EagleSpy V4\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf">
+      <HintPath>..\..\EagleSpy V4\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\EagleSpy V4\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SipaaFramework">
+      <HintPath>..\..\EagleSpy V4\SipaaFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Siticone.Desktop.UI">
+      <HintPath>..\..\EagleSpy V4\Siticone.Desktop.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinMM.Net">
+      <HintPath>..\..\EagleSpy V4\WinMM.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Eaglespy\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eaglespy\ApkBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\ApkBuilder.Designer.cs">
+      <DependentUpon>ApkBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eaglespy\ApkDexEncrypter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\ApkDexEncrypter.Designer.cs">
+      <DependentUpon>ApkDexEncrypter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eaglespy\BankingInjections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\BankingInjections.Designer.cs">
+      <DependentUpon>BankingInjections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eaglespy\Dialogue3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\Dialogue3.Designer.cs">
+      <DependentUpon>Dialogue3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eaglespy\Injection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\Injection.Designer.cs">
+      <DependentUpon>Injection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eaglespy\LangSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\LangSelect.Designer.cs">
+      <DependentUpon>LangSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eaglespy\Lockscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\Lockscreen.Designer.cs">
+      <DependentUpon>Lockscreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eaglespy\Msgbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\Msgbox.Designer.cs">
+      <DependentUpon>Msgbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eaglespy\Program.cs" />
+    <Compile Include="Eaglespy\Ransomeware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\Ransomeware.Designer.cs">
+      <DependentUpon>Ransomeware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eaglespy\ServerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\ServerManager.Designer.cs">
+      <DependentUpon>ServerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eaglespy\SmartInjection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eaglespy\SmartInjection.Designer.cs">
+      <DependentUpon>SmartInjection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\AccountManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\AccountManager.Designer.cs">
+      <DependentUpon>AccountManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\AddNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\AddNumber.Designer.cs">
+      <DependentUpon>AddNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\alertform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\alertform.Designer.cs">
+      <DependentUpon>alertform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Apk_studio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Apk_studio.Designer.cs">
+      <DependentUpon>Apk_studio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Applications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Applications.Designer.cs">
+      <DependentUpon>Applications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\AppsProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\AppsProperties.Designer.cs">
+      <DependentUpon>AppsProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\AsyncLock.cs" />
+    <Compile Include="Eagle_Spy\Build.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Build.Designer.cs">
+      <DependentUpon>Build.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Button5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Button5.Designer.cs">
+      <DependentUpon>Button5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\CallPhone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\CallPhone.Designer.cs">
+      <DependentUpon>CallPhone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\CallsManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\CallsManager.Designer.cs">
+      <DependentUpon>CallsManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\CameraManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\CameraManager.Designer.cs">
+      <DependentUpon>CameraManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\ClipboardManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\ClipboardManager.Designer.cs">
+      <DependentUpon>ClipboardManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\clrSAVE.cs" />
+    <Compile Include="Eagle_Spy\clsComputerInfo.cs" />
+    <Compile Include="Eagle_Spy\Codes.cs" />
+    <Compile Include="Eagle_Spy\Color_Box0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Color_Box0.Designer.cs">
+      <DependentUpon>Color_Box0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\comptableform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\comptableform.Designer.cs">
+      <DependentUpon>comptableform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\ContactsManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\ContactsManager.Designer.cs">
+      <DependentUpon>ContactsManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\CustomFont.cs" />
+    <Compile Include="Eagle_Spy\CustomFontDrawString.cs" />
+    <Compile Include="Eagle_Spy\DebugProtect1.cs" />
+    <Compile Include="Eagle_Spy\Dialog1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Dialog1.Designer.cs">
+      <DependentUpon>Dialog1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Dialog2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Dialog2.Designer.cs">
+      <DependentUpon>Dialog2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\DialogPloice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\DialogPloice.Designer.cs">
+      <DependentUpon>DialogPloice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Download.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Download.Designer.cs">
+      <DependentUpon>Download.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Drooper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Drooper.Designer.cs">
+      <DependentUpon>Drooper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\EagleAlert.cs" />
+    <Compile Include="Eagle_Spy\Eaglepopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Eaglepopup.Designer.cs">
+      <DependentUpon>Eaglepopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\EagleSpyCallLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\EagleSpyCallLogs.Designer.cs">
+      <DependentUpon>EagleSpyCallLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\EagleSpyMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\EagleSpyMain.Designer.cs">
+      <DependentUpon>EagleSpyMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\EagleSpyMsgbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\EagleSpyMsgbox.Designer.cs">
+      <DependentUpon>EagleSpyMsgbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Editor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Editor.Designer.cs">
+      <DependentUpon>Editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\EditSocket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\EditSocket.Designer.cs">
+      <DependentUpon>EditSocket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\FileManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\FileManager.Designer.cs">
+      <DependentUpon>FileManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\GeoIP.cs" />
+    <Compile Include="Eagle_Spy\GetCountryName2.cs" />
+    <Compile Include="Eagle_Spy\GetFlagThisIp.cs" />
+    <Compile Include="Eagle_Spy\getIconFrmReg.cs" />
+    <Compile Include="Eagle_Spy\Icons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Icons.Designer.cs">
+      <DependentUpon>Icons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\information.Designer.cs">
+      <DependentUpon>information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\infoServer.cs" />
+    <Compile Include="Eagle_Spy\inp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\inp.Designer.cs">
+      <DependentUpon>inp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Jector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Jector.Designer.cs">
+      <DependentUpon>Jector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Keylogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Keylogger.Designer.cs">
+      <DependentUpon>Keylogger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\LanguageSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\LanguageSelector.Designer.cs">
+      <DependentUpon>LanguageSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\ListData.cs" />
+    <Compile Include="Eagle_Spy\LocationManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\LocationManager.Designer.cs">
+      <DependentUpon>LocationManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\MetroSet_UI\Controls.cs" />
+    <Compile Include="Eagle_Spy\Microphone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Microphone.Designer.cs">
+      <DependentUpon>Microphone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\MultiSounds.cs" />
+    <Compile Include="Eagle_Spy\MyWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\My\MyApplication.cs" />
+    <Compile Include="Eagle_Spy\My\MyComputer.cs" />
+    <Compile Include="Eagle_Spy\My\MyProject.cs" />
+    <Compile Include="Eagle_Spy\My\MySettings.cs" />
+    <Compile Include="Eagle_Spy\My\MySettings.Designer.cs">
+      <DependentUpon>MySettings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Eagle_Spy\My\MySettingsProperty.cs" />
+    <Compile Include="Eagle_Spy\My\Resources\Resources.cs" />
+    <Compile Include="Eagle_Spy\NativeMethods.cs" />
+    <Compile Include="Eagle_Spy\nonetform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\nonetform.Designer.cs">
+      <DependentUpon>nonetform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\NotificationMaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\NotificationMaker.Designer.cs">
+      <DependentUpon>NotificationMaker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Notifications.cs" />
+    <Compile Include="Eagle_Spy\Notif_Sound.cs" />
+    <Compile Include="Eagle_Spy\PBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\PermissionsManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\PermissionsManager.Designer.cs">
+      <DependentUpon>PermissionsManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Ports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Ports.Designer.cs">
+      <DependentUpon>Ports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\RefreshExplorer.cs" />
+    <Compile Include="Eagle_Spy\RegistryHandler.cs" />
+    <Compile Include="Eagle_Spy\Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\ResizeableControl.cs" />
+    <Compile Include="Eagle_Spy\reso.cs" />
+    <Compile Include="Eagle_Spy\RTB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\ScreenLoger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\ScreenLoger.Designer.cs">
+      <DependentUpon>ScreenLoger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\ScreenReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\ScreenReader.Designer.cs">
+      <DependentUpon>ScreenReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\ScreenReaderV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\ScreenReaderV2.Designer.cs">
+      <DependentUpon>ScreenReaderV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\SecurityKey.cs" />
+    <Compile Include="Eagle_Spy\SelfRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\SelfRemove.Designer.cs">
+      <DependentUpon>SelfRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\ShellTerminal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\ShellTerminal.Designer.cs">
+      <DependentUpon>ShellTerminal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\smsMaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\smsMaker.Designer.cs">
+      <DependentUpon>smsMaker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\SMSManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\SMSManager.Designer.cs">
+      <DependentUpon>SMSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\snapsdownloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\snapsdownloader.Designer.cs">
+      <DependentUpon>snapsdownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\sockets\Accept.cs" />
+    <Compile Include="Eagle_Spy\sockets\Client.cs" />
+    <Compile Include="Eagle_Spy\sockets\Data.cs" />
+    <Compile Include="Eagle_Spy\SpySettings.cs" />
+    <Compile Include="Eagle_Spy\Upload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Upload.Designer.cs">
+      <DependentUpon>Upload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\WebViewMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\WebViewMonitor.Designer.cs">
+      <DependentUpon>WebViewMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\Win_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy\Win_Users.Designer.cs">
+      <DependentUpon>Win_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eagle_Spy\ZoomPictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Eagle_Spy_Applications.cs" />
+    <Compile Include="Eagle_Spy_Build.cs" />
+    <Compile Include="Eagle_Spy_Eaglepopup.cs" />
+    <Compile Include="Eagle_Spy_EagleSettings.cs" />
+    <Compile Include="Eagle_Spy_EagleSpyMain.cs" />
+    <Compile Include="Eagle_Spy_Microphone.cs" />
+    <Compile Include="Eagle_Spy_PermissionsManager.cs" />
+    <Compile Include="Eagle_Spy_Ports.cs" />
+    <Compile Include="Eagle_Spy_Resources.cs" />
+    <Compile Include="Eagle_Spy_ScreenShoter.cs" />
+    <Compile Include="Eagle_Spy_Settings.cs" />
+    <Compile Include="Eagle_Spy_tipfirewalltracker.cs" />
+    <Compile Include="Eagle_Spy_Updater.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VB_0024AnonymousDelegate_0.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="-applications.resx" />
+    <EmbeddedResource Include="-build.resx" />
+    <EmbeddedResource Include="-eaglepopup.resx" />
+    <EmbeddedResource Include="-eaglespycalllogs.resx" />
+    <EmbeddedResource Include="-eaglespymain.resx" />
+    <EmbeddedResource Include="-microphone.resx" />
+    <EmbeddedResource Include="-permissionsmanager.resx" />
+    <EmbeddedResource Include="-ports.resx" />
+    <EmbeddedResource Include="-screenshoter.resx" />
+    <EmbeddedResource Include="-settings.resx" />
+    <EmbeddedResource Include="Eaglespy\Injection.resources" />
+    <EmbeddedResource Include="Eagle_Spy\Applications.resources" />
+    <EmbeddedResource Include="Eagle_Spy\Build.resources" />
+    <EmbeddedResource Include="Eagle_Spy\Craxspopup.resources" />
+    <EmbeddedResource Include="Eagle_Spy\CraxsRatMain.resources" />
+    <EmbeddedResource Include="Eagle_Spy\CraxsSettings.resources" />
+    <EmbeddedResource Include="Eagle_Spy\EagleSpyMain.resources" />
+    <EmbeddedResource Include="Eagle_Spy\EagleSpyMain.resx">
+      <DependentUpon>EagleSpyMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eagle_Spy\Microphone.resources" />
+    <EmbeddedResource Include="Eagle_Spy\PermissionsManager.resources" />
+    <EmbeddedResource Include="Eagle_Spy\Resources.resources" />
+    <EmbeddedResource Include="Eagle_Spy\ScreenShoter.resources" />
+    <EmbeddedResource Include="Eagle_Spy\Settings.resources" />
+    <EmbeddedResource Include="Eagle_Spy\tipfirewalltracker.resources" />
+    <EmbeddedResource Include="Eagle_Spy\Updater.resources" />
+    <EmbeddedResource Include="Eagle_Spy\WebViewMonitor.resx">
+      <DependentUpon>WebViewMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Eagle_Spy\My\MySettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MySettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
